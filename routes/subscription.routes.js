@@ -12,11 +12,12 @@ import {
 
 const subscriptionRouter = Router()
 
+subscriptionRouter.get('/upcoming-renewals', authorize, getUpcomingRenewals)
 subscriptionRouter.get('/:id', authorize, getUserSubscriptions)
 subscriptionRouter.post('/', authorize, createSubscription)
 subscriptionRouter.put('/:id', authorize, updateSubscription)
 subscriptionRouter.delete('/:id', authorize, deleteSubscription)
 subscriptionRouter.put('/:id/cancel', authorize, cancelSubscription)
-subscriptionRouter.get('/upcoming-renewals', authorize, getUpcomingRenewals)
+
 
 export default subscriptionRouter
